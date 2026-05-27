@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analysis</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="analysis-container">
+
+    <h1>Student Learning Analysis</h1>
+
+    <form action="/analyze" method="POST">
+
+        <input
+        type="number"
+        name="study_hours"
+        placeholder="Study Hours Per Day"
+        required>
+
+        <input
+        type="number"
+        name="sleep_hours"
+        placeholder="Sleep Hours"
+        required>
+
+        <input
+        type="number"
+        name="social_media"
+        placeholder="Social Media Hours"
+        required>
+
+        <input
+        type="number"
+        name="attendance"
+        placeholder="Attendance Percentage"
+        required>
+
+        <button type="submit">
+            Analyze Learning DNA
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

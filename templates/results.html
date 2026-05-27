@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>AI Learning Insights</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- =========================
+         TOP DASHBOARD
+    ========================== -->
+
+    <div class="top-dashboard">
+
+        <!-- LEFT SECTION -->
+
+        <div class="dashboard-left">
+
+            <div class="dashboard-badge">
+                ✨ AI Learning Intelligence
+            </div>
+
+            <h1>
+                AI Learning
+                Insights
+            </h1>
+
+            <p>
+                Personalized academic intelligence based on your
+                learning behavior, productivity consistency,
+                wellness balance, and focus patterns.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT SECTION -->
+
+        <div class="dashboard-right">
+
+            <!-- TOP CARDS -->
+
+            <div class="top-cards">
+
+                <!-- PERFORMANCE CARD -->
+
+                <div class="performance-card">
+
+                    <span>
+                        Overall Pattern
+                    </span>
+
+                    <h2>
+                        {{ performance_level }}
+                    </h2>
+
+                    <div class="overall-score">
+
+                        {{ overall_score }}%
+
+                    </div>
+
+                </div>
+
+
+                <!-- AI SUMMARY -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        🧠
+                    </div>
+
+                    <div class="summary-content">
+
+                        <h3>AI Summary</h3>
+
+                        <p>
+                            Your learning behavior reflects balanced
+                            academic engagement with adaptive focus
+                            consistency and stable productivity patterns.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCORE GRID -->
+
+            <div class="score-grid">
+
+                <!-- FOCUS -->
+
+                <div class="score-box">
+
+                    <div class="score-top">
+
+                        <h3>
+                            Focus Stability
+                        </h3>
+
+                        <span>
+                            {{ focus_score }}/100
+                        </span>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress fill-blue"
+                        style="width: {{ focus_score }}%;">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WELLNESS -->
+
+                <div class="score-box">
+
+                    <div class="score-top">
+
+                        <h3>
+                            Wellness Balance
+                        </h3>
+
+                        <span>
+                            {{ wellness_score }}/100
+                        </span>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress fill-purple"
+                        style="width: {{ wellness_score }}%;">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONSISTENCY -->
+
+                <div class="score-box">
+
+                    <div class="score-top">
+
+                        <h3>
+                            Learning Consistency
+                        </h3>
+
+                        <span>
+                            {{ consistency_score }}/100
+                        </span>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress fill-cyan"
+                        style="width: {{ consistency_score }}%;">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         AI INSIGHTS
+    ========================== -->
+
+    <div class="recommendation-section">
+
+        <h2>
+            AI Insights
+        </h2>
+
+        <div class="recommendation-grid">
+
+            {% for rec in recommendations %}
+
+            <div class="recommendation-card">
+
+                <div class="recommendation-line"></div>
+
+                <p>
+                    {{ rec }}
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         STUDY PLAN
+    ========================== -->
+
+    <div class="study-plan">
+
+        <h2>
+            Personalized Strategy
+        </h2>
+
+        <ul>
+
+            {% for plan in study_plan %}
+
+            <li>
+                {{ plan }}
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

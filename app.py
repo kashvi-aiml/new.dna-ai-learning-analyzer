@@ -54,6 +54,20 @@ def analyze():
 
     attendance = float(request.form['attendance'])
 
+    # Input Validation
+
+    if study_hours < 0 or study_hours > 24:
+        return "Study hours must be between 0 and 24."
+
+    if sleep_hours < 0 or sleep_hours > 24:
+        return "Sleep hours must be between 0 and 24."
+
+    if social_media < 0 or social_media > 24:
+        return "Social media usage must be between 0 and 24."
+
+    if attendance < 0 or attendance > 100:
+        return "Attendance percentage must be between 0 and 100."
+
 
     # ==========================================
     # DATASET PATTERN REFERENCES

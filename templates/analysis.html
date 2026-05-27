@@ -8,8 +8,7 @@
 
     <title>Analysis</title>
 
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='analysis.css') }}">
 
 </head>
 
@@ -17,41 +16,49 @@
 
 <div class="analysis-container">
 
-    <h1>Student Learning Analysis</h1>
+    <div class="analysis-card">
 
-    <form action="/analyze" method="POST">
+        <h1>Student Learning Analysis</h1>
 
-        <input
-        type="number"
-        name="study_hours"
-        placeholder="Study Hours Per Day"
-        required>
+        <p>
+            Enter your academic behavior indicators to generate
+            AI-powered learning insights and personalized recommendations.
+        </p>
 
-        <input
-        type="number"
-        name="sleep_hours"
-        placeholder="Sleep Hours"
-        required>
+        <form action="/analyze" method="POST" class="analysis-form">
 
-        <input
-        type="number"
-        name="social_media"
-        placeholder="Social Media Hours"
-        required>
+            <div class="input-group">
+                <label>Study Hours Per Day</label>
+                <input type="number" name="study_hours"
+                placeholder="Enter study hours" required>
+            </div>
 
-        <input
-        type="number"
-        name="attendance"
-        placeholder="Attendance Percentage"
-        required>
+            <div class="input-group">
+                <label>Sleep Hours</label>
+                <input type="number" name="sleep_hours"
+                placeholder="Enter sleep hours" required>
+            </div>
 
-        <button type="submit">
-            Analyze Learning DNA
-        </button>
+            <div class="input-group">
+                <label>Social Media Hours</label>
+                <input type="number" name="social_media"
+                placeholder="Enter social media usage" required>
+            </div>
 
-    </form>
+            <div class="input-group">
+                <label>Attendance Percentage</label>
+                <input type="number" name="attendance"
+                placeholder="Enter attendance percentage" required>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                🚀 Analyze Learning DNA
+            </button>
+
+        </form>
+
+    </div>
 
 </div>
 
 </body>
-</html>

@@ -102,13 +102,16 @@ AI-Learning-DNA/
 │   └── results.html
 │
 └── venv/
-
+```
 ---
 
-## 👩‍💻 Author
+# 👩‍💻 Author
 
-Kashvi  
+**Kashvi**
+
 AIML Undergraduate interested in AI, analytics, backend development, and modern web applications.
 
 🔗 GitHub: https://github.com/kashvi-aiml
+
+
 

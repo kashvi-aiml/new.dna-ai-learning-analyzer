@@ -102,3 +102,20 @@ AI-Learning-DNA/
 │   └── results.html
 │
 └── venv/
+
+## Landing Page
+
+![Landing Page](screenshots/1-landingPage.png)
+
+---
+
+## Analysis Page
+
+![Analysis Page](screenshots/2-analysis1.png)
+
+---
+
+## AI Insights Dashboard
+
+![Results Dashboard](screenshots/3-result1.png)
+![Results Dashboard](screenshots/4-result2.png)

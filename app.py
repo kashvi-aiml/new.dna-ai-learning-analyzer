@@ -3,9 +3,8 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# ======================================================
+
 # LOAD DATASETS
-# ======================================================
 
 habits_df = pd.read_csv(
     "datasets/student_habits_performance.csv"
@@ -15,37 +14,27 @@ study_df = pd.read_csv(
     "datasets/student_study_habits.csv"
 )
 
-# ======================================================
 # HOME PAGE
-# ======================================================
 
 @app.route('/')
 def home():
 
     return render_template("index.html")
 
-
-# ======================================================
 # ANALYSIS PAGE
-# ======================================================
 
 @app.route('/analysis')
 def analysis():
 
     return render_template("analysis.html")
 
-
-# ======================================================
 # ANALYZE STUDENT DATA
-# ======================================================
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
 
-    # ==========================================
     # USER INPUTS
-    # ==========================================
-
+    
     study_hours = float(request.form['study_hours'])
 
     sleep_hours = float(request.form['sleep_hours'])
@@ -68,10 +57,7 @@ def analyze():
     if attendance < 0 or attendance > 100:
         return "Attendance percentage must be between 0 and 100."
 
-
-    # ==========================================
     # DATASET PATTERN REFERENCES
-    # ==========================================
 
     avg_study = habits_df[
         'study_hours_per_day'
@@ -154,10 +140,7 @@ def analyze():
 
     consistency_score = min(max(consistency_score, 0), 100)
 
-
-    # ==========================================
     # OVERALL LEARNING PROFILE
-    # ==========================================
 
     overall_score = int(
 
@@ -169,10 +152,7 @@ def analyze():
 
     )
 
-
-    # ==========================================
     # LEARNING PROFILE GENERATION
-    # ==========================================
 
     if overall_score >= 85:
 
@@ -198,10 +178,7 @@ def analyze():
             "Developing Academic Stability Profile"
         )
 
-
-    # ==========================================
     # CONTEXTUAL AI INSIGHTS
-    # ==========================================
 
     recommendations = []
 
@@ -286,10 +263,7 @@ def analyze():
 
         )
 
-
-    # ==========================================
     # ADAPTIVE STUDY STRATEGY
-    # ==========================================
 
     study_plan = []
 
@@ -346,10 +320,7 @@ def analyze():
             "Maintain current balanced learning routine"
         )
 
-
-    # ==========================================
     # MATCHED STUDENT PATTERNS
-    # ==========================================
 
     similar_students = habits_df[
 
@@ -365,10 +336,7 @@ def analyze():
 
     similar_count = len(similar_students)
 
-
-    # ==========================================
     # RENDER RESULTS
-    # ==========================================
 
     return render_template(
 
@@ -391,9 +359,7 @@ def analyze():
         similar_count=similar_count
     )
 
-# ======================================================
 # RUN APPLICATION
-# ======================================================
 
 if __name__ == "__main__":
 
